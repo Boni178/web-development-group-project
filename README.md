@@ -2,14 +2,17 @@
 
 📚 About the Project
 
-We recreated a portfolio website using HTML and CSS (with optional Bootstrap for easier styling).
+We recreated a portfolio website using HTML ,CSS and JavaScript .
 The focus was on building a clean, responsive design while practicing teamwork and good coding practices.
+
+
 
 👥 Team Members
 
 Bongani Nyawose
 
-Nicole Oreke
+Nicole  Akeyo
+
 
 
 
@@ -28,14 +31,17 @@ We made sure the code was clean, organized, and commented for easy understanding
 
 
 
+
+
 📜 Challenge Rules We Followed
+
 
 
 Worked in a group of 2–5 members.
 
 Everyone contributed to the project.
 
-Used only allowed technologies (HTML, CSS, Bootstrap).
+Used only allowed technologies (HTML, CSS, JavaScript ,Bootstrap).
 
 Clean, readable code with comments.
 
