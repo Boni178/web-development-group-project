@@ -1,0 +1,1036 @@
+/* Resets the default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set basic font and spacing for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+/* Makes scrolling smooth  */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add space inside and below each section */
+section {
+    padding: 20px 15px;
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 15px auto; 
+    box-sizing: border-box;
+ 
+   
+}
+
+/* home section */
+/*  full-screen background with center content */
+.home {
+  position: relative;
+ 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 80px;
+
+  background-image: url('gallery/pexels-anna-nekrashevich-8532928.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+ 
+}
+
+/* Add dark overlay on home section  */
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* dark tint */
+  z-index: 1;
+}
+
+/* Container for home text and image */
+.home-container{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+
+}
+
+
+
+/* Text inside home section */
+.home-text {
+  max-width: 600px;
+  text-align: left;
+}
+/* Small heading in home section */
+.home-text h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+/* Big heading in home section */
+.home-text h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Paragraph in home section */
+.home-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ccc;
+  text-align: left;
+}
+/* Buttons inside home section */
+.home-buttons {
+  display: flex;
+  gap: 20px;
+}
+/* General style for buttons */
+.btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+/*  button  color */
+.primary {
+  background-color:  #004d40;
+  color: white;
+}
+/*   transparent button */
+
+.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+/* transparent button  hover*/
+
+.secondary:hover {
+  background-color: white;
+  color:  #004d40;
+}
+/* Image inside home section */
+.home-image img {
+  width: 350px;
+  height: auto;
+}
+
+/* Make home section responsive on smaller screens */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  .home-image img {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+/* Special text effect with background inside letters */
+
+.transparent-text1 {
+  font-size: 80px;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  background: url('background.jpg') no-repeat center center/cover;
+  background-clip: text;
+  -webkit-background-clip: text; 
+ 
+}
+
+.transparent-text2 {
+  color: transparent; 
+  -webkit-text-stroke: 1px  #004d40; 
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+/* Group for navigation buttons */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Style for small navigation icons */
+.nav-icons {
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+}
+
+.nav-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+/* hover on icons  */
+.nav-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Sidebar navigation menu */
+.sidebar {
+  position:fixed;
+  margin-top: 16px;
+  top: 10%;
+  right: 0;
+  height:auto;
+  background-color: #0d1b2a;
+  padding: 10px;
+  
+  z-index: 1000;
+  transition: all 0.3s;
+}
+/* Button to toggle sidebar */
+.toggle-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+/* Sidebar menu items */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* sidebar icons*/
+.sidebar-item {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition:background 0.3s, padding 0.3s;
+}
+/* Sidebar item hover effect */
+.sidebar-item:hover {
+  background:  #004d40;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+/* navbar styling */
+.navbar {
+  width: 100%;
+  padding: 20px;
+  z-index: 1000;
+  transition: opacity 0.5s ease; /* it adds smooth transition */
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+   
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1; /* becomes fully visible */
+}
+
+.hidden {
+  opacity: 0; /* becomes fully transparent */
+
+}
+
+
+
+/* Navbar container */
+.navbar .nav-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Logo text in navbar */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+/* Navigation link styles */
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+/*  hire button in navbar */
+.hire-button {
+  background-color:  #004d40;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+
+
+
+/* about section */
+/* About section styling */
+
+/*about-container*/
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+/*about-image styling*/
+.about-image {
+  margin-right: 20px;
+}
+/*about image tag styling*/
+.about-img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+/* About section text */
+.about-text {
+  max-width: 600px;
+}
+/* About section text */
+.about-text h4 {
+  font-size: 16px;
+  color: #888;
+  font-weight: bold;
+}
+/* About section text */
+.about-text h2 {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+/* About section text */
+.about-text p {
+  font-size: 16px;
+  color: #555;
+ 
+}
+/*line under the paragraph */
+ .line-under{
+   border-bottom: 1px solid gray; /* Add a line under the paragraph */
+  padding-bottom: 5px; 
+  margin-bottom: 10px; 
+}
+
+.about-contact-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  margin-top: 20px;
+}
+/*contect text*/
+.contact-item p {
+  margin: 5px 0; 
+  font-size: 16px;
+  color: #333;
+}
+/*about contact text*/
+.about-contact-info p {
+  font-size: 16px;
+  color: #333;
+}
+/*about contact icons*/
+.about-contact-info i {
+  margin-right: 8px;
+  color: #004d40; 
+}
+/*about-social-media styling*/
+.about-social-media {
+  margin-top: 10px;
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+}
+/*about-social-media text*/
+.about-social-media p {
+  margin: 0; 
+  font-size: 16px;
+  color: #333;
+}
+/*about-social-media icons styling */
+.about-social-media a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s;
+  margin-right: 15px;
+}
+/*about-social-media icons hover effect*/
+.about-social-media a:hover {
+  color:  #004d40; 
+}
+/*about buttons styling */
+.about-buttons {
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  color: white; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+
+}
+/*hire me button styling */
+.hire-me{
+  background-color: #004d40 ;
+  border-radius: 50px;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+ 
+}
+/* download cv button styling */
+.download-cv {
+  background-color:#28a745 ;
+  border-radius: 50px;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+ 
+}
+
+/*about-social-media icons*/
+.about-social-media i {
+  margin-right: 8px;
+  color: #004d40; 
+  font-size: 20px;
+}
+
+
+
+
+
+/* services section */
+.services{
+  background-color:  rgb(240, 240, 240);
+
+}
+/* Container for all service cards */
+.services-container{
+  display: flex;
+    flex-direction: column;
+  align-items: center;
+  align-items: center;
+  background-color:  rgb(240, 240, 240);
+  margin-bottom: 0;
+  padding-bottom: 0; 
+ 
+
+}
+
+
+/*more services heading text*/
+h3.services-heading {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+}
+/* Each service card box */
+#services-box {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+ 
+
+}
+/*more services box styling*/
+.box {
+  display: block;
+  flex-direction: column;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 250px;
+  transition: 0.3s;
+}
+/* Make card pop out a little when hovered */
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+/*more services box icons*/
+.box i {
+  font-size: 25px;
+  color:  #004d40;
+  margin-bottom: 15px;
+}
+/*more services box text*/
+.box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align:center;
+}
+/*more services box text*/
+.box p {
+  font-size: 14px;
+  color: #666;
+}
+/* more services styling */
+.more-services {
+  font-size: 18px;
+  color:   #004d40;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex; 
+  margin: 20px auto 0;
+   align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  text-align: center;
+}
+/* more services hover effect*/
+.more-services:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* featured skills section  */
+/* first featured skills text container */
+.featured-container1 {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 40px;
+  flex-wrap: nowrap; 
+
+}
+/* second featured skills text container */
+.featured-container2 {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 40px; 
+  flex-wrap: nowrap; 
+}
+
+
+/* image text */
+.image-text {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; 
+}
+
+/* left image styling */
+.left-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* right text styling */
+.right-text {
+  flex: 1;
+  max-width: 50%;
+}
+/* right text heading*/
+.right-text h4 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color:  #004d40;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+/* right text heading*/
+.right-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+/* right text */
+.right-text p {
+  margin-bottom: 26px;
+  color: #555;
+}
+
+/* skill bar text*/
+.skill-bar {
+  margin-bottom: 20px;
+}
+/* skiil bar text*/
+.skill-bar p {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+/* bar styling*/
+.bar {
+  width: 80%;
+  height: 6px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+/* the fill of the bar*/
+.fill {
+  height: 100%;
+  background-color:  #004d40;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Makes it responsive to mobile devices*/
+
+@media (max-width: 768px) {
+  .featured-container {
+      flex-direction: column; /* Stack text and image vertically on smaller screens */
+  }
+
+  .right-text, .bottom-image {
+      max-width: 100%; 
+  }
+}
+/* top image */
+.top-image {
+  flex: 1; /* Allow the image to take up available space */
+  max-width: 50%; /* Limit the width of the image */
+}
+
+/* bottom image*/
+.bottom-image {
+flex: 1; /* Allow the image to take up available space */
+max-width: 50%; /* Limit the width of the image */
+}
+/* top image styling */
+.top-image img {
+  width: 65%; 
+  max-width: 600px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto 20px; 
+}
+
+
+/* bottom image styling */
+.bottom-image img {
+width: 65%; 
+height: auto; 
+max-width: 600px; 
+
+  display: block;
+  margin: 0 auto 20px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* skills section */
+
+.skills-section {
+  width: 85%;
+  margin: 50px auto;
+}
+
+/* skills container box*/
+.skills .container-box {
+  display: flex;
+  align-items: center;
+  background-color:white;
+  margin-bottom: 0; 
+  padding-bottom: 0; 
+}
+/* skills styling*/
+#skills {
+  display: flex;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+  margin-top: 20px;
+  gap: 5px;
+  justify-content: center;
+  background-color:  rgb(240, 240, 240);
+}
+
+/* skills text*/
+#skills h2{
+margin-bottom: 5px;
+padding: 10px;
+margin-top: 5px;
+color: black;
+font-size: 17px;
+text-align: center;
+}
+/* gallery and skill styling*/
+#skills, #gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.skills-box h2 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+/* skills box text*/
+.skills-box p {
+  font-size: 12px;
+  color: #666;
+  max-width: 220px;
+}
+
+
+/* column styling */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+/* skills box styling */
+.skills-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* skills box icons*/
+.skills-box i {
+  font-size: 18px;
+  color:  #004d40 ;
+  margin-bottom: 10px;
+}
+/* skills footer */
+.skills-footer {
+  display: flex;
+   flex-wrap: wrap; 
+    justify-content: space-around; 
+   text-align: center; 
+  background-color:white; 
+  color:black; 
+  padding: 40px 20px;
+  
+}
+/* skills footer text*/
+.skills-footer h3 {
+  font-size: 29px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/*  footer text*/
+.skills-footer p {
+ 
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* image styling */
+.skills-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
+  height: 100vh; 
+  position:relative; 
+}
+
+/* skills image styling */
+.skills-image img {
+  height: 100%; 
+  width: auto; 
+  object-fit: cover; 
+  margin-left: 120px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+/* gallery section */
+
+/* gallery container*/
+.gallery .container-box {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 0; 
+  padding-bottom: 0; 
+
+  font-weight: bold;
+ 
+}
+/* gallery heading */
+.container-box h2 {
+  margin-bottom: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  color: black;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+/* gallery styling*/
+#gallery {
+  display: grid;
+  grid-template-columns:repeat(3, 1fr); 
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+   padding: 15px;
+  gap: 10px;
+  justify-content: center;
+
+}
+/* gallery image styling*/
+.gallery img {
+  width: 100%;
+  max-width: 160px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+ 
+}
+/* gallery image hover effect*/
+.gallery img:hover {
+  transform: scale(1.05);
+}
+/* gallery footer */
+/* gallery footer styling */
+.gallery-footer {
+  height: 180px;
+  padding: 20px;
+  display: flex;
+  text-align: center;
+  margin-top: 0;
+  background-color: #004d40 ;
+  color: white;
+}
+/* gallery footer container*/
+.gallery-footer-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 25px;
+  max-width: 800px;
+  margin: auto;
+}
+/* gallery footer items*/
+.gallery-footer-item {
+  text-align: center;
+  color: white;
+}
+/* gallery footer icons*/
+.gallery-footer-item i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+/* gallery footer text*/
+.gallery-footer-item p {
+font-size: 18px;
+font-weight: bold;
+}
+
+
+/* Footer section */
+.footer {
+  background-color: #013128;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+/* Footer heading */
+.footer-heading {
+  font-size: 24px;
+  margin-bottom: 10px; 
+}
+
+
+/* footer container */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+}
+/* top footer */
+.footer-top{
+display: flex;
+flex-direction: column;
+
+height: 200px;
+align-items: center;
+justify-content: center;
+margin: 0; 
+padding: 0;
+text-align: center;
+}
+
+
+
+/* footer contact styling */
+.footer-contact-info {
+  display: flex; 
+  justify-content: center; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+  font-size: 16px;
+}
+/* footer contact text */
+.footer-contact-info p {
+ font-weight: bold;
+  font-size: 16px;
+  margin: 0; 
+  display: flex;
+  align-items: center; 
+  gap: 5px;
+}
+
+/* icon color when hovered */
+.contact-info i {
+ 
+  color: #ffd54f;
+}
+/* social media icons */
+.social-media a {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+/* Social media icons hover effect */
+.social-media a:hover {
+  color: #ffd54f;
+}
+/* bottom footer */
+.footer-bottom {
+  display: flex; 
+  background-color: #013128;
+  justify-content: space-evenly; 
+  align-items: center; 
+  gap: 20px; 
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+ 
+  padding-top: 10px;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
