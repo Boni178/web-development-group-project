@@ -65,6 +65,8 @@ All group member names listed here and in the form.
 🧪 How We'll Be Graded
 
 
+
+
 30% - Functionality (does the site work and match the original?)
 
 20% - Code quality (clean, organized, commented)
@@ -76,6 +78,8 @@ All group member names listed here and in the form.
 10% - Creativity and extra features (if any)
 
 10% - Presentation (README, demo, etc.)
+
+
 
 
 
